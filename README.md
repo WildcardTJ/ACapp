@@ -1,5 +1,5 @@
 # AC app
-Animal Crossing New Horizons android app
+Animal Crossing New Horizons companion Android app
 
 ## Features
 * Browse a list of insects and fish 
