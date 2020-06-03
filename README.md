@@ -12,3 +12,4 @@ Animal Crossing New Horizons companion Android app
 * Koin
 * NavController
 * One Activity, Lots of fragments
+* MVVM
