@@ -9,13 +9,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.InsectModel
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_insect_detail.*
 import kotlinx.android.synthetic.main.seasonality_recycler_item.*
+import kotlinx.android.synthetic.main.toolbar_back.*
 
 
 class InsectDetailFragment : Fragment() {
 
     private lateinit var adapter: SeasonalityAdapter
+
+    private lateinit var insectModel: InsectModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,32 +31,47 @@ class InsectDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
-        val insectModel = this.requireArguments().get("InsectModel") as InsectModel
 
-        insect_value.text = insectModel.toString()
-        insect_value.text = insectModel.value.toString()
-        if (insectModel.value == 0) {
+        insectModel = this.requireArguments().get("InsectModel") as InsectModel
+        requireActivity().title = insectModel.name
+        showPrice(insectModel.value)
+        showDonationStatus(insectModel.donated)
+        setupSeasonalityView(insectModel.seasonality)
+        donated_card.setOnClickListener { updateDonation() }
+    }
+
+    private fun updateDonation() {
+        insectModel.donated = !insectModel.donated
+        showDonationStatus(insectModel.donated)
+    }
+
+    private fun showPrice(value: Int) {
+
+        if (value == 0)
             insect_value.text = getString(R.string.price_data_unavailable)
-        }
-        insect_donated.text = getString(R.string.not_donated)
+        else
+            insect_value.text = value.toString()
+    }
 
-        if (insectModel.donated) {
-            not_donated_image.visibility = View.GONE
+    private fun showDonationStatus(donated: Boolean) {
+
+        if (donated) {
+            not_donated_image.visibility = View.INVISIBLE
             donated_image.visibility = View.VISIBLE
             insect_donated.text = getString(R.string.donated)
+        } else {
+            not_donated_image.visibility = View.VISIBLE
+            donated_image.visibility = View.INVISIBLE
+            insect_donated.text = getString(R.string.not_donated)
         }
-
-        setupSeasonalityView(insectModel.seasonality)
-
     }
 
     private fun setupSeasonalityView(seasonality: List<String>) {
         val seasonalityMap = convertListToMap(seasonality)
-        val recyclerView: RecyclerView = seasonality_recycler_view
-        val numberOfColumns = 6
-        recyclerView.layoutManager = GridLayoutManager(context, numberOfColumns)
         adapter = SeasonalityAdapter(seasonalityMap)
-        recyclerView.adapter = adapter
+        seasonality_recycler_view.adapter = adapter
+        val numberOfColumns = 6
+        seasonality_recycler_view.layoutManager = GridLayoutManager(context, numberOfColumns)
     }
 
     private fun convertListToMap(months: List<String>): HashMap<String, Boolean> {
@@ -80,7 +99,4 @@ class InsectDetailFragment : Fragment() {
         return monthMap as HashMap
     }
 
-    private fun showYears(map: HashMap<String, Boolean>) = month_layout.run {
-        adapter = SeasonalityAdapter(map)
-    }
 }

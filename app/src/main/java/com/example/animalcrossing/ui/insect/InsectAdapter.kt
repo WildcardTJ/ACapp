@@ -57,7 +57,7 @@ class InsectAdapter(
 
             val bundle = Bundle()
             bundle.putSerializable("InsectModel", insectModel)
-
+            bundle.putString("title", insectModel.name)
             itemView.findNavController().navigate(R.id.action_nav_insect_to_insect_detail, bundle)
         }
     }

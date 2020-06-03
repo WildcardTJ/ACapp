@@ -6,7 +6,7 @@ import java.io.Serializable
 data class InsectModel (
     val id: Int,
     val name: String,
-    val donated: Boolean,
+    var donated: Boolean,
     val seasonality: List<String>, //TODO northern and southern hemisphere
     val activeHours: String,
     val value: Int,

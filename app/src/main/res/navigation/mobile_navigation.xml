@@ -24,8 +24,12 @@
     <fragment
         android:id="@+id/insect_detail"
         android:name="com.example.animalcrossing.ui.insect.InsectDetailFragment"
-        android:label="Insect Detail"
-        tools:layout="@layout/fragment_insect_detail" />
+        android:label="{title}"
+        tools:layout="@layout/fragment_insect_detail" >
+        <argument
+            android:name="title"
+            app:argType="string"/>
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
