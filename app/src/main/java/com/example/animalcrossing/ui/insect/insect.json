@@ -1,0 +1,722 @@
+[
+  {
+    "id": "1",
+    "name": "Common Butterfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 160,
+    "rarity": 0.99
+  },
+  {
+    "id": "2",
+    "name": "Yellow Butterfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 160,
+    "rarity": 0.99
+  },
+  {
+    "id": "3",
+    "name": "Tiger Butterfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 240,
+    "rarity": 0.99
+  },
+  {
+    "id": "4",
+    "name": "Peacock Butterfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 2500,
+    "rarity": 0.99
+  },
+  {
+    "id": "5",
+    "name": "Common Bluebottle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 300,
+    "rarity": 0.99
+  },
+  {
+    "id": "6",
+    "name": "Paper Kite Butterfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 1000,
+    "rarity": 0.99
+  },
+  {
+    "id": "7",
+    "name": "Great Purple Emperor",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 3000,
+    "rarity": 0.99
+  },
+  {
+    "id": "8",
+    "name": "Monach Butterfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 140,
+    "rarity": 0.99
+  },
+  {
+    "id": "9",
+    "name": "Emperor Butterfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 4000,
+    "rarity": 0.99
+  },
+  {
+    "id": "10",
+    "name": "Agrias Butterfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 3000,
+    "rarity": 0.99
+  },
+  {
+    "id": "11",
+    "name": "Raja Brooke's Birdwing",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 2500,
+    "rarity": 0.99
+  },
+  {
+    "id": "12",
+    "name": "Queen Alexandra's Birdwing",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 4000,
+    "rarity": 0.99
+  },
+  {
+    "id": "13",
+    "name": "Moth",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 130,
+    "rarity": 0.99
+  },
+  {
+    "id": "14",
+    "name": "Atlas Moth",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 3000,
+    "rarity": 0.99
+  },
+  {
+    "id": "15",
+    "name": "Madagascan Sunset Moth",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 2500,
+    "rarity": 0.99
+  },
+  {
+    "id": "16",
+    "name": "Long Locust",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 200,
+    "rarity": 0.99
+  },
+  {
+    "id": "17",
+    "name": "Migratory Locust",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 600,
+    "rarity": 0.99
+  },
+  {
+    "id": "18",
+    "name": "Rice Grasshopper",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 160,
+    "rarity": 0.99
+  },
+  {
+    "id": "19",
+    "name": "Grasshopper",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 160,
+    "rarity": 0.99
+  },
+  {
+    "id": "20",
+    "name": "Cricket",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 130,
+    "rarity": 0.99
+  },
+  {
+    "id": "21",
+    "name": "Bell Cricket",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 430,
+    "rarity": 0.99
+  },
+  {
+    "id": "22",
+    "name": "Mantis",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 430,
+    "rarity": 0.99
+  },
+  {
+    "id": "23",
+    "name": "Orchid Mantis",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 2400,
+    "rarity": 0.99
+  },
+  {
+    "id": "24",
+    "name": "Honeybee",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 200,
+    "rarity": 0.99
+  },
+  {
+    "id": "25",
+    "name": "Wasp",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 2500,
+    "rarity": 0.99
+  },
+  {
+    "id": "26",
+    "name": "Brown Cicada",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "27",
+    "name": "Robust Cicada",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "28",
+    "name": "Giant Cicada",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "29",
+    "name": "Walker Cicada",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 400,
+    "rarity": 0.99
+  },
+  {
+    "id": "30",
+    "name": "Evening Cicada",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "31",
+    "name": "Cicada Shell",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "32",
+    "name": "Red Dragonfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 180,
+    "rarity": 0.99
+  },
+  {
+    "id": "33",
+    "name": "Darner Dragonfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 230,
+    "rarity": 0.99
+  },
+  {
+    "id": "34",
+    "name": "Banded Dragonfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 4500,
+    "rarity": 0.99
+  },
+  {
+    "id": "35",
+    "name": "Damselfly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "36",
+    "name": "Firefly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "37",
+    "name": "Mole Cricket",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 500,
+    "rarity": 0.99
+  },
+  {
+    "id": "38",
+    "name": "Pondskater",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 130,
+    "rarity": 0.99
+  },
+  {
+    "id": "39",
+    "name": "Diving Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 800,
+    "rarity": 0.99
+  },
+  {
+    "id": "40",
+    "name": "Giant Water Bug",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 2000,
+    "rarity": 0.99
+  },
+  {
+    "id": "41",
+    "name": "Stinkbug",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 120,
+    "rarity": 0.99
+  },
+  {
+    "id": "42",
+    "name": "Man-faced Stink Bug",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 1000,
+    "rarity": 0.99
+  },
+  {
+    "id": "43",
+    "name": "Ladybug",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 200,
+    "rarity": 0.99
+  },
+  {
+    "id": "44",
+    "name": "Tiger Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 1500,
+    "rarity": 0.99
+  },
+  {
+    "id": "45",
+    "name": "Jewel Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 2400,
+    "rarity": 0.99
+  },
+  {
+    "id": "46",
+    "name": "Violin Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 450,
+    "rarity": 0.99
+  },
+  {
+    "id": "47",
+    "name": "Citrus Long-horned Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 350,
+    "rarity": 0.99
+  },
+  {
+    "id": "48",
+    "name": "Rosalia Batesi Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "49",
+    "name": "Blue Weevil Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "50",
+    "name": "Dung Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "51",
+    "name": "Earth-boring Dung Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "52",
+    "name": "Scarab Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "53",
+    "name": "Drone Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "54",
+    "name": "Goliath Beetle",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "55",
+    "name": "Saw Stag",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "56",
+    "name": "Miyama Stag",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "57",
+    "name": "Giant Stag",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "58",
+    "name": "Rainbow Stag",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 6000,
+    "rarity": 0.99
+  },
+  {
+    "id": "59",
+    "name": "Cyclommatus Stag",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "60",
+    "name": "Golden Stag",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "61",
+    "name": "Giraffe Stag",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "62",
+    "name": "Horned Dynastid",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "63",
+    "name": "Horned Atlas",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "64",
+    "name": "Horned Elephant",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "65",
+    "name": "Horned Herucles",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "66",
+    "name": "Walking Stick",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "67",
+    "name": "Walking Leaf",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 600,
+    "rarity": 0.99
+  },
+  {
+    "id": "68",
+    "name": "Bagworm",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 600,
+    "rarity": 0.99
+  },
+  {
+    "id": "69",
+    "name": "Ant",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "70",
+    "name": "Hermit Crab",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 1000,
+    "rarity": 0.99
+  },
+  {
+    "id": "71",
+    "name": "Wharf Roach",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 200,
+    "rarity": 0.99
+  },
+  {
+    "id": "72",
+    "name": "Fly",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "73",
+    "name": "Mosquito",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 130,
+    "rarity": 0.99
+  },
+  {
+    "id": "74",
+    "name": "Flea",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 0,
+    "rarity": 0.99
+  },
+  {
+    "id": "75",
+    "name": "Snail",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 250,
+    "rarity": 0.99
+  },
+  {
+    "id": "76",
+    "name": "Pill Bug",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 250,
+    "rarity": 0.99
+  },
+  {
+    "id": "77",
+    "name": "Centipede",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 300,
+    "rarity": 0.99
+  },
+  {
+    "id": "78",
+    "name": "Spider",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 480,
+    "rarity": 0.99
+  },
+  {
+    "id": "79",
+    "name": "Tarantula",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 8000,
+    "rarity": 0.99
+  },
+  {
+    "id": "80",
+    "name": "Scorpion",
+    "donated": false,
+    "seasonality": "July",
+    "activeHours": "0006",
+    "value": 8000,
+    "rarity": 0.99
+  }
+]

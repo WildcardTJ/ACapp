@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Animal Crossing</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Animal Crossing</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_insect">Insects</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <!--Insects-->
+    <string name="insect_test_long_name">Citrus Long Horned Beetle</string>
+
+
+    <string name="communicate">Communicate</string>
+    <string name="image_of_an_insect">Image of an insect</string>
+    <string name="image_of_insect">Image of insect</string>
+    <string name="insect_is_donated">Insect is donated</string>
+    <string name="insect_details">Insect details</string>
+    <string name="back_arrow_button">Back arrow button</string>
+    <string name="wildcard_value">%s</string>
+    <string name="not_donated">Not Donated</string>
+    <string name="donated">Donated</string>
+    <string name="price_data_unavailable">Price data not collected</string>
+    <string name="seasonality">Seasonality</string>
+    <string name="active_hours">Active hours</string>
+</resources>
