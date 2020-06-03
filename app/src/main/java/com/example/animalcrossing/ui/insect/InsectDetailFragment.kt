@@ -1,35 +1,36 @@
 package com.example.animalcrossing.ui.insect
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.InsectModel
-import kotlinx.android.synthetic.main.activity_insect_detail.*
-import kotlinx.android.synthetic.main.activity_insect_detail.donated_image
+import kotlinx.android.synthetic.main.fragment_insect_detail.*
 import kotlinx.android.synthetic.main.seasonality_recycler_item.*
-import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
-import org.koin.core.context.startKoin
 
-class InsectDetailActivity : AppCompatActivity() {
+
+class InsectDetailFragment : Fragment() {
 
     private lateinit var adapter: SeasonalityAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        setupKoin()
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_insect_detail)
-        val insectModel: InsectModel = intent.extras?.get("insect") as InsectModel
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? = inflater.inflate(R.layout.fragment_insect_detail, container, false)
 
-        val map: HashMap<String, Boolean> = convertListToMap(insectModel.seasonality)
-        setupRecyclerView(map)
-        showYears(map)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        super.onViewCreated(view, savedInstanceState)
+        val insectModel = this.requireArguments().get("InsectModel") as InsectModel
 
         insect_value.text = insectModel.toString()
-        this.title = insectModel.name
         insect_value.text = insectModel.value.toString()
         if (insectModel.value == 0) {
             insect_value.text = getString(R.string.price_data_unavailable)
@@ -41,22 +42,18 @@ class InsectDetailActivity : AppCompatActivity() {
             donated_image.visibility = View.VISIBLE
             insect_donated.text = getString(R.string.donated)
         }
+
+        setupSeasonalityView(insectModel.seasonality)
+
     }
 
-    private fun setupKoin() {
-        startKoin {
-            androidLogger()
-            androidContext(this@InsectDetailActivity)
-            modules(appModule)
-        }
-    }
-
-    private fun setupRecyclerView(map: HashMap<String, Boolean>) {
-        val recyclerView = findViewById<RecyclerView>(R.id.seasonality_recycler_view)
+    private fun setupSeasonalityView(seasonality: List<String>) {
+        val seasonalityMap = convertListToMap(seasonality)
+        val recyclerView: RecyclerView = seasonality_recycler_view
         val numberOfColumns = 6
-        recyclerView?.layoutManager = GridLayoutManager(this, numberOfColumns)
-        adapter = SeasonalityAdapter(map)
-        recyclerView?.adapter = adapter
+        recyclerView.layoutManager = GridLayoutManager(context, numberOfColumns)
+        adapter = SeasonalityAdapter(seasonalityMap)
+        recyclerView.adapter = adapter
     }
 
     private fun convertListToMap(months: List<String>): HashMap<String, Boolean> {

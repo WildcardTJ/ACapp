@@ -38,12 +38,11 @@ class InsectFragment : Fragment() {
         recyclerView?.layoutManager = GridLayoutManager(this.context, numberOfColumns)
         adapter = InsectAdapter(insectData)
         recyclerView?.adapter = adapter
+
     }
 
     private fun showInsects(insects: List<InsectModel>) = insect_text.run {
 
         adapter = InsectAdapter(insects)
     }
-
-
 }

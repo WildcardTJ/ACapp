@@ -1,16 +1,14 @@
 package com.example.animalcrossing.ui.insect
 
-import android.app.Activity
-import android.content.Intent
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import android.view.ViewGroup
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageButton
-import androidx.navigation.fragment.NavHostFragment.findNavController
+import android.widget.TextView
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.example.animalcrossing.R
-import com.example.animalcrossing.ui.home.HomeFragment
 import com.example.animalcrossing.ui.insect.model.InsectModel
 import kotlinx.android.synthetic.main.insect_recylcer_item.view.*
 
@@ -29,14 +27,13 @@ class InsectAdapter(
     override fun getItemCount(): Int = insectList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = insectList[position].run {
-        setClickListeners(holder, position, this)
+        setClickListeners(holder, this)
         holder.updateInsectName(this.name)
         holder.updateDonatedState(this.donated)
     }
 
     private fun setClickListeners(
         holder: ViewHolder,
-        position: Int,
         insectModel: InsectModel
     ) {
         val insectText = holder.itemView.findViewById<TextView>(R.id.insect_text)
@@ -57,12 +54,11 @@ class InsectAdapter(
         }
 
         internal fun openInsectPage(insectModel: InsectModel) {
-            val navController = findNavController(HomeFragment())
-            val parentActivity: Activity = itemView.context as Activity
 
-            val intent = Intent(itemView.context, InsectDetailActivity::class.java)
-            intent.putExtra("insect", insectModel)
-            parentActivity.startActivity(intent)
+            val bundle = Bundle()
+            bundle.putSerializable("InsectModel", insectModel)
+
+            itemView.findNavController().navigate(R.id.action_nav_insect_to_insect_detail, bundle)
         }
     }
 }
