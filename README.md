@@ -1,7 +1,7 @@
-# AC app
+## AC app
 Animal Crossing New Horizons android app
 
-<u> Features </u>
+# Features
 * Log your catches
 * Check out the latest posts from /r/animalcrossing
 * Get notifications on who's in town today
