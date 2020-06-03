@@ -2,7 +2,8 @@
 Animal Crossing New Horizons android app
 
 ## Features
-* Browse a list of insects and fish while logging your donations
+* Browse a list of insects and fish 
+* Log your donations with Blathers
 * Check out the latest posts from /r/animalcrossing
 * Get notifications on who's in town today
 
