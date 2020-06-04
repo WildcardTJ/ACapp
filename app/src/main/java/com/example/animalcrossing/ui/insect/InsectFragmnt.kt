@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.insect_recylcer_item.*
 
 class InsectFragment : Fragment() {
 
-    private val insectViewModel: InsectViewModel by viewModel()
+    private val viewModel: InsectViewModel by viewModel()
 
     private lateinit var adapter: InsectAdapter
 
@@ -27,7 +27,7 @@ class InsectFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
-        val insectData = insectViewModel.getInsectData()
+        val insectData = viewModel.insectData
         setupRecyclerView(insectData)
         showInsects(insectData)
     }

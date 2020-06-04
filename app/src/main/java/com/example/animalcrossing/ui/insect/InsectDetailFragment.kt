@@ -6,18 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.animalcrossing.R
+import com.example.animalcrossing.ui.insect.model.Hemisphere
+import com.example.animalcrossing.ui.insect.model.Hemisphere.*
 import com.example.animalcrossing.ui.insect.model.InsectModel
-import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_insect_detail.*
-import kotlinx.android.synthetic.main.seasonality_recycler_item.*
-import kotlinx.android.synthetic.main.toolbar_back.*
 
 
 class InsectDetailFragment : Fragment() {
 
     private lateinit var adapter: SeasonalityAdapter
+
+    private val viewModel: InsectDetailViewModel by viewModel()
 
     private lateinit var insectModel: InsectModel
 
@@ -40,11 +41,20 @@ class InsectDetailFragment : Fragment() {
         setupSeasonalityView(insectModel.seasonality)
         setupActiveHoursView(insectModel.activeHours)
         donated_card.setOnClickListener { updateDonation() }
+        northern_southern.setOnClickListener { updateHemisphere() }
     }
 
     private fun updateDonation() {
         insectModel.donated = !insectModel.donated
         showDonationStatus(insectModel.donated)
+    }
+
+    private fun updateHemisphere() {
+
+//        if (viewModel.accountModel.hemisphere == NORTHERN)
+//            viewModel.accountModel.hemisphere = SOUTHERN
+//        else
+//            viewModel.accountModel.hemisphere = NORTHERN
     }
 
     private fun showPrice(value: Int) {
@@ -69,7 +79,7 @@ class InsectDetailFragment : Fragment() {
     }
 
     private fun setupSeasonalityView(seasonality: List<String>) {
-        val seasonalityMap = convertListToMap(seasonality)
+        val seasonalityMap = convertListToMap(seasonality, SOUTHERN)
         adapter = SeasonalityAdapter(seasonalityMap)
         seasonality_recycler_view.adapter = adapter
         val numberOfColumns = 6
@@ -80,8 +90,12 @@ class InsectDetailFragment : Fragment() {
 
     }
 
-    private fun convertListToMap(months: List<String>): HashMap<String, Boolean> {
-        val monthList = listOf(
+    private fun convertListToMap(
+        activeMonthsList: List<String>,
+        hemisphere: Hemisphere
+    ): HashMap<String, Boolean> {
+
+        val allMonths = listOf(
             "Jan",
             "Feb",
             "Mar",
@@ -95,14 +109,22 @@ class InsectDetailFragment : Fragment() {
             "Nov",
             "Dec"
         )
-        val monthMap = mutableMapOf<String, Boolean>()
-        monthList.forEach { month -> monthMap[month] = false }
-        months.forEach { month ->
-            if (monthMap[month] == false) {
-                monthMap[month] = true
+        //TODO refactor because it is stupid
+        //create a map, set all values to false
+        val activeMonthsMap = mutableMapOf<String, Boolean>()
+        allMonths.forEach { month -> activeMonthsMap[month] = false }
+
+        //matches only active months, sets those to true
+        activeMonthsList.forEach { month ->
+            if (activeMonthsMap[month] == false) {
+                activeMonthsMap[month] = true
             }
         }
-        return monthMap as HashMap
+
+        if (hemisphere == SOUTHERN)
+            activeMonthsMap.forEach { (month, active) -> activeMonthsMap[month] = !active }
+
+        return activeMonthsMap as HashMap
     }
 
 }

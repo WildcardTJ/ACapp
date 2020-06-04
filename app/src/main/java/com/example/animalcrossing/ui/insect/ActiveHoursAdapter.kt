@@ -19,13 +19,13 @@ class ActiveHoursAdapter(
             }
     }
 
-    override fun getItemCount(): Int = activeHours.size
+    override fun getItemCount(): Int = activeHours.length
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        activeHours.values.toList()[position].run {
-            holder.updateBoxColour(this)
-            holder.updateText(activeHours.keys.toList()[position])
-            holder.updateTextColor(this)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+//        activeHours.values.toList()[position].run {
+//            holder.updateBoxColour(this)
+//            holder.updateText(activeHours.keys.toList()[position])
+//            holder.updateTextColor(this)
         }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -34,7 +34,6 @@ class ActiveHoursAdapter(
             if (enabled) {
                 itemView.month_layout.setBackgroundColor(itemView.resources.getColor(R.color.monthEnabled))
                 //TODO selectable themes
-                //TODO highlight current month
             }
         }
 

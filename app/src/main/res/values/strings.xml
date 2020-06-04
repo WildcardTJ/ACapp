@@ -30,4 +30,6 @@
     <string name="price_data_unavailable">Price data not collected</string>
     <string name="seasonality">Seasonality</string>
     <string name="active_hours">Active hours</string>
+    <string name="northern">Northern</string>
+    <string name="southern">Southern</string>
 </resources>

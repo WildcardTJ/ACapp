@@ -8,6 +8,9 @@ val appModule = module {
     // single instance of HelloRepository
     single<InsectRepository> { InsectRepositoryImpl() }
 
-    // InsectViewModel ViewModel
+    // Insect ViewModel
     viewModel { InsectViewModel(get()) }
+
+    //InsectDetail ViewModel
+    viewModel { InsectDetailViewModel() }
 }

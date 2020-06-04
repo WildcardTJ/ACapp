@@ -12,12 +12,6 @@ class InsectViewModel(private val repo: InsectRepository) : ViewModel() {
     }
     val text: LiveData<String> = _text
 
-    private var insectData: List<InsectModel> = listOf()
+    val insectData: List<InsectModel> = InsectOfflineData().getInsectOfflineData()
 
-    fun getInsectData(): List<InsectModel> {
-        //TODO Api GET insect data
-        //if get fails, load offline data
-        insectData = InsectOfflineData().getInsectOfflineData()
-        return insectData
-    }
 }
