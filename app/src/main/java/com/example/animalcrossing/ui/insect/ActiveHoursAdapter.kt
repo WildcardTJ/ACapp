@@ -32,7 +32,7 @@ class ActiveHoursAdapter(
 
         internal fun updateBoxColour(enabled: Boolean) {
             if (enabled) {
-                itemView.month_layout.setBackgroundColor(itemView.resources.getColor(R.color.monthEnabled))
+                itemView.month_layout.setBackgroundColor(itemView.resources.getColor(R.color.activeMonth))
                 //TODO selectable themes
             }
         }

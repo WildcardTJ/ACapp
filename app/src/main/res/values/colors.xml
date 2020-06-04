@@ -7,5 +7,6 @@
     <color name="insectBackground">#289626</color>
     <color name="insectText">#FFFFFF</color>
     <color name="insectButton">#B4B4B4</color>
-    <color name="monthEnabled">#669549</color>
+    <color name="activeMonth">#669549</color>
+    <color name="inactiveMonth">#FFFFFF</color>
 </resources>

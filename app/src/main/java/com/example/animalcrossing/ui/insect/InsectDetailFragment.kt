@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.animalcrossing.R
-import com.example.animalcrossing.ui.insect.model.Hemisphere
+import com.example.animalcrossing.ui.insect.model.AccountModel
 import com.example.animalcrossing.ui.insect.model.Hemisphere.*
 import com.example.animalcrossing.ui.insect.model.InsectModel
 import kotlinx.android.synthetic.main.fragment_insect_detail.*
@@ -20,7 +20,8 @@ class InsectDetailFragment : Fragment() {
 
     private val viewModel: InsectDetailViewModel by viewModel()
 
-    private lateinit var insectModel: InsectModel
+    private lateinit var insect: InsectModel
+    private lateinit var accountModel: AccountModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,28 +34,31 @@ class InsectDetailFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
 
-        insectModel = this.requireArguments().get("InsectModel") as InsectModel
-        
-        requireActivity().title = insectModel.name
-        showPrice(insectModel.value)
-        showDonationStatus(insectModel.donated)
-        setupSeasonalityView(insectModel.seasonality)
-        setupActiveHoursView(insectModel.activeHours)
+        viewModel.insect = this.requireArguments().get("InsectModel") as InsectModel
+        insect = viewModel.insect!!
+        accountModel = viewModel.accountModel
+
+        showPrice(insect.value)
+        showDonationStatus(insect.donated)
+        setupSeasonalityView(insect.seasonality)
+        setupActiveHoursView(insect.activeHours)
         donated_card.setOnClickListener { updateDonation() }
         northern_southern.setOnClickListener { updateHemisphere() }
     }
 
     private fun updateDonation() {
-        insectModel.donated = !insectModel.donated
-        showDonationStatus(insectModel.donated)
+
+        insect.donated = !insect.donated
+        showDonationStatus(insect.donated)
     }
 
     private fun updateHemisphere() {
 
-//        if (viewModel.accountModel.hemisphere == NORTHERN)
-//            viewModel.accountModel.hemisphere = SOUTHERN
-//        else
-//            viewModel.accountModel.hemisphere = NORTHERN
+        if (accountModel.hemisphere == NORTHERN)
+            accountModel.hemisphere = SOUTHERN
+        else
+            accountModel.hemisphere = NORTHERN
+        adapter.notifyDataSetChanged()
     }
 
     private fun showPrice(value: Int) {
@@ -79,11 +83,10 @@ class InsectDetailFragment : Fragment() {
     }
 
     private fun setupSeasonalityView(seasonality: List<String>) {
-        val seasonalityMap = convertListToMap(seasonality, SOUTHERN)
-        adapter = SeasonalityAdapter(seasonalityMap)
-        seasonality_recycler_view.adapter = adapter
-        val numberOfColumns = 6
-        seasonality_recycler_view.layoutManager = GridLayoutManager(context, numberOfColumns)
+        val seasonalityMap = convertListToMap(seasonality)
+        adapter = SeasonalityAdapter(seasonalityMap, accountModel.hemisphere)
+        calendar_grid.adapter = adapter
+        calendar_grid.layoutManager = GridLayoutManager(context, NUMBER_OF_COLUMNS)
     }
 
     private fun setupActiveHoursView(activeHours: String) {
@@ -91,8 +94,7 @@ class InsectDetailFragment : Fragment() {
     }
 
     private fun convertListToMap(
-        activeMonthsList: List<String>,
-        hemisphere: Hemisphere
+        activeMonthsList: List<String>
     ): HashMap<String, Boolean> {
 
         val allMonths = listOf(
@@ -121,10 +123,13 @@ class InsectDetailFragment : Fragment() {
             }
         }
 
-        if (hemisphere == SOUTHERN)
-            activeMonthsMap.forEach { (month, active) -> activeMonthsMap[month] = !active }
-
         return activeMonthsMap as HashMap
+    }
+
+    companion object {
+
+        private const val NUMBER_OF_COLUMNS = 6
+
     }
 
 }
