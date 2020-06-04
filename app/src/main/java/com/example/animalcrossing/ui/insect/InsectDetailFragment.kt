@@ -37,6 +37,7 @@ class InsectDetailFragment : Fragment() {
         showPrice(insectModel.value)
         showDonationStatus(insectModel.donated)
         setupSeasonalityView(insectModel.seasonality)
+        setupActiveHoursView(insectModel.activeHours)
         donated_card.setOnClickListener { updateDonation() }
     }
 
@@ -72,6 +73,10 @@ class InsectDetailFragment : Fragment() {
         seasonality_recycler_view.adapter = adapter
         val numberOfColumns = 6
         seasonality_recycler_view.layoutManager = GridLayoutManager(context, numberOfColumns)
+    }
+
+    private fun setupActiveHoursView(activeHours: String) {
+
     }
 
     private fun convertListToMap(months: List<String>): HashMap<String, Boolean> {

@@ -32,7 +32,9 @@ class SeasonalityAdapter(
 
         internal fun updateBoxColour(enabled: Boolean) {
             if (enabled) {
-                itemView.month_layout.setBackgroundColor(itemView.resources.getColor(R.color.monthEnabled)) //TODO theme
+                itemView.month_layout.setBackgroundColor(itemView.resources.getColor(R.color.monthEnabled))
+                //TODO selectable themes
+                //TODO highlight current month
             }
         }
 
