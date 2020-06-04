@@ -33,6 +33,7 @@ class InsectDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         insectModel = this.requireArguments().get("InsectModel") as InsectModel
+        
         requireActivity().title = insectModel.name
         showPrice(insectModel.value)
         showDonationStatus(insectModel.donated)

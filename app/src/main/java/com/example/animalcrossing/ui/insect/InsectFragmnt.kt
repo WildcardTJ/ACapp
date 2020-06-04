@@ -33,12 +33,12 @@ class InsectFragment : Fragment() {
     }
 
     private fun setupRecyclerView(insectData: List<InsectModel>) {
+
         val recyclerView = view?.findViewById<RecyclerView>(R.id.insect_recycler_view)
         val numberOfColumns = 3
         recyclerView?.layoutManager = GridLayoutManager(this.context, numberOfColumns)
         adapter = InsectAdapter(insectData)
         recyclerView?.adapter = adapter
-
     }
 
     private fun showInsects(insects: List<InsectModel>) = insect_text.run {
