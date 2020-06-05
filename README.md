@@ -2,6 +2,8 @@
 
 An Android companion app for Animal Crossing New Horizons!
 
+<br>
+
 ## Planned Features
 * Browse a list of insects and fish 
 * Log your donations with Blathers
