@@ -7,6 +7,7 @@ An Android companion app for Animal Crossing New Horizons!
 * Log your donations with Blathers
 * Check out the latest posts from /r/animalcrossing
 * Get notifications on who's in town today
+* Log turnip prices and get price predictions
 * Upload game save data to the app (not even sure if that one's possible)
 
 ## Tech
