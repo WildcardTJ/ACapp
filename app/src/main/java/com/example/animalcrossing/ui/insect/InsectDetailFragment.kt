@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.AccountModel
-import com.example.animalcrossing.ui.insect.model.Hemisphere.*
 import com.example.animalcrossing.ui.insect.model.InsectModel
 import kotlinx.android.synthetic.main.fragment_insect_detail.*
 
@@ -54,10 +53,7 @@ class InsectDetailFragment : Fragment() {
 
     private fun updateHemisphere() {
 
-        if (accountModel.hemisphere == NORTHERN)
-            accountModel.hemisphere = SOUTHERN
-        else
-            accountModel.hemisphere = NORTHERN
+        viewModel.updateAccountModelHemisphere()
 
         adapter.notifyDataSetChanged()
     }
@@ -65,26 +61,29 @@ class InsectDetailFragment : Fragment() {
     private fun showPrice(value: Int) {
 
         if (value == 0)
-            insect_value.text = getString(R.string.price_data_unavailable)
+            price_text.text = getString(R.string.price_data_unavailable)
         else
-            insect_value.text = value.toString()
+            price_text.text = value.toString()
     }
 
     private fun showDonationStatus(donated: Boolean) {
 
         if (donated) {
-            not_donated_image.visibility = View.INVISIBLE
             donated_image.visibility = View.VISIBLE
-            insect_donated.text = getString(R.string.donated)
+            donated_text.visibility = View.VISIBLE
+            not_donated_image.visibility = View.INVISIBLE
+            not_donated_text.visibility = View.INVISIBLE
         } else {
             not_donated_image.visibility = View.VISIBLE
+            not_donated_text.visibility = View.VISIBLE
             donated_image.visibility = View.INVISIBLE
-            insect_donated.text = getString(R.string.not_donated)
+            donated_text.visibility = View.INVISIBLE
         }
     }
 
     private fun setupSeasonalityView(seasonality: List<String>) {
-        val seasonalityMap = convertListToMap(seasonality)
+
+        val seasonalityMap = viewModel.convertListToMap(seasonality)
         adapter = SeasonalityAdapter(seasonalityMap, accountModel.hemisphere)
         calendar_grid.adapter = adapter
         calendar_grid.layoutManager = GridLayoutManager(context, NUMBER_OF_COLUMNS)
@@ -94,43 +93,9 @@ class InsectDetailFragment : Fragment() {
 
     }
 
-    private fun convertListToMap(
-        activeMonthsList: List<String>
-    ): HashMap<String, Boolean> {
-
-        val allMonths = listOf(
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sept",
-            "Oct",
-            "Nov",
-            "Dec"
-        )
-        //TODO refactor because it is stupid
-        //create a map, set all values to false
-        val activeMonthsMap = mutableMapOf<String, Boolean>()
-        allMonths.forEach { month -> activeMonthsMap[month] = false }
-
-        //matches only active months, sets those to true
-        activeMonthsList.forEach { month ->
-            if (activeMonthsMap[month] == false) {
-                activeMonthsMap[month] = true
-            }
-        }
-
-        return activeMonthsMap as HashMap
-    }
-
     companion object {
 
         private const val NUMBER_OF_COLUMNS = 6
-
     }
 
 }

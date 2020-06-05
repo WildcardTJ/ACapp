@@ -27,19 +27,19 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/value_image"
+                android:id="@+id/price_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:padding="5dp"
                 android:src="@drawable/value"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/insect_value"
+                app:layout_constraintEnd_toStartOf="@id/price_text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/insect_value"
+                android:id="@+id/price_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -48,7 +48,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/value_image"
+                app:layout_constraintStart_toEndOf="@id/price_image"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="350" />
 
@@ -73,11 +73,10 @@
                 android:id="@+id/donated_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:padding="5dp"
                 android:src="@drawable/ic_donated_large"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/insect_donated"
+                app:layout_constraintEnd_toStartOf="@id/not_donated_text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="visible" />
@@ -86,27 +85,40 @@
                 android:id="@+id/not_donated_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:padding="5dp"
                 android:src="@drawable/ic_not_donated_large"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/insect_donated"
+                app:layout_constraintEnd_toStartOf="@id/not_donated_text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="invisible" />
 
             <TextView
-                android:id="@+id/insect_donated"
+                android:id="@+id/not_donated_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:layout_marginEnd="10dp"
+                android:text="@string/not_donated"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/not_donated_image"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/donated_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/donated"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/not_donated_image"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Donated" />
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -159,7 +171,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/hours_card"
