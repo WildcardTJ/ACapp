@@ -1,7 +1,7 @@
 # AC app
 Animal Crossing New Horizons companion Android app
 
-## Features
+## Planned Features
 * Browse a list of insects and fish 
 * Log your donations with Blathers
 * Check out the latest posts from /r/animalcrossing
