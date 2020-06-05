@@ -82,7 +82,7 @@ class InsectDetailFragment : Fragment() {
     }
 
     private fun setupSeasonalityView(seasonality: List<String>) {
-
+        //transition when north/south switch occurs
         val seasonalityMap = viewModel.convertListToMap(seasonality)
         adapter = SeasonalityAdapter(seasonalityMap, accountModel.hemisphere)
         calendar_grid.adapter = adapter
