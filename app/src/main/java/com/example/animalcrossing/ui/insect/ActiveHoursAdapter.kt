@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import com.example.animalcrossing.R
-import kotlinx.android.synthetic.main.seasonality_recycler_item.view.*
+import kotlinx.android.synthetic.main.calendar_item.view.*
 
 class ActiveHoursAdapter(
     private val activeHours: String
@@ -14,7 +14,7 @@ class ActiveHoursAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return LayoutInflater.from(parent.context)
-            .inflate(R.layout.seasonality_recycler_item, parent, false).run {
+            .inflate(R.layout.calendar_item, parent, false).run {
                 ViewHolder(this)
             }
     }

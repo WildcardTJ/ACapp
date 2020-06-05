@@ -10,16 +10,16 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.InsectModel
-import kotlinx.android.synthetic.main.insect_recylcer_item.view.*
+import kotlinx.android.synthetic.main.insect_list_item.view.*
 
 
-class InsectAdapter(
+class InsectListAdapter(
     private val insectList: List<InsectModel>
-) : RecyclerView.Adapter<InsectAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<InsectListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return LayoutInflater.from(parent.context)
-            .inflate(R.layout.insect_recylcer_item, parent, false).run {
+            .inflate(R.layout.insect_list_item, parent, false).run {
                 ViewHolder(this)
             }
     }

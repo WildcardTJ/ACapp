@@ -10,7 +10,7 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_insect"
-            android:icon="@color/insectButton"
+            android:icon="@drawable/ic_insect_foreground"
             android:title="@string/menu_insect" />
         <item
             android:id="@+id/nav_slideshow"

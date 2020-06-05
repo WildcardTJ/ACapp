@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.InsectModel
-import kotlinx.android.synthetic.main.insect_recylcer_item.*
+import kotlinx.android.synthetic.main.insect_list_item.*
 
-class InsectFragment : Fragment() {
+class InsectListFragment : Fragment() {
 
     private val viewModel: InsectViewModel by viewModel()
 
-    private lateinit var adapter: InsectAdapter
+    private lateinit var listAdapter: InsectListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,12 +37,12 @@ class InsectFragment : Fragment() {
         val recyclerView = view?.findViewById<RecyclerView>(R.id.insect_recycler_view)
         val numberOfColumns = 3
         recyclerView?.layoutManager = GridLayoutManager(this.context, numberOfColumns)
-        adapter = InsectAdapter(insectData)
-        recyclerView?.adapter = adapter
+        listAdapter = InsectListAdapter(insectData)
+        recyclerView?.adapter = listAdapter
     }
 
     private fun showInsects(insects: List<InsectModel>) = insect_text.run {
 
-        adapter = InsectAdapter(insects)
+        listAdapter = InsectListAdapter(insects)
     }
 }

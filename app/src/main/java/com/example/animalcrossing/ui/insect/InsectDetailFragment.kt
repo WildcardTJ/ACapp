@@ -58,6 +58,7 @@ class InsectDetailFragment : Fragment() {
             accountModel.hemisphere = SOUTHERN
         else
             accountModel.hemisphere = NORTHERN
+
         adapter.notifyDataSetChanged()
     }
 
