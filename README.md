@@ -1,8 +1,6 @@
-# Animal Crossing Companion  <img src="app/src/main/res/drawable-v24/animal_crossing_android.png" width="150" height="150" align="right"> 
+# Animal Crossing Companion  <img src="app/src/main/res/drawable-v24/animal_crossing_android.png" width="125" height="125" align="right"> 
 
 An Android companion app for Animal Crossing New Horizons!
-
-<br>
 
 ## Planned Features
 * Browse a list of insects and fish 
