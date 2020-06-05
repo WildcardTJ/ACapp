@@ -1,6 +1,8 @@
 # AC app
 Animal Crossing New Horizons companion Android app
 
+<img src="src/main/res/drawable/animal_crossing_android.png" width="100" height="100">
+
 ## Planned Features
 * Browse a list of insects and fish 
 * Log your donations with Blathers
