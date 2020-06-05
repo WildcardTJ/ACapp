@@ -1,4 +1,5 @@
-# Animal Crossing Companion <img src="app/src/main/res/drawable-v24/animal_crossing_android.png" width="100" height="100"> 
+# Animal Crossing Companion 
+<img src="app/src/main/res/drawable-v24/animal_crossing_android.png" width="100" height="100"> 
 
 ## Planned Features
 * Browse a list of insects and fish 
