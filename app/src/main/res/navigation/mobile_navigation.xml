@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/insect_detail"
-        android:name="com.example.animalcrossing.ui.insect.InsectDetailFragment"
+        android:name="com.example.animalcrossing.ui.detail.InsectDetailFragment"
         android:label="{title}"
         tools:layout="@layout/fragment_insect_detail" >
         <argument

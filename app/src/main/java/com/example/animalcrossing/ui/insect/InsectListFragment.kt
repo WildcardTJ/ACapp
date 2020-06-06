@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.insect_list_item.*
 
 class InsectListFragment : Fragment() {
 
-    private val viewModel: InsectViewModel by viewModel()
+    private val listViewModel: InsectListViewModel by viewModel()
 
     private lateinit var listAdapter: InsectListAdapter
 
@@ -27,7 +27,7 @@ class InsectListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
-        val insectData = viewModel.insectData
+        val insectData = listViewModel.insectData
         setupRecyclerView(insectData)
         showInsects(insectData)
         //TODO show number of donated

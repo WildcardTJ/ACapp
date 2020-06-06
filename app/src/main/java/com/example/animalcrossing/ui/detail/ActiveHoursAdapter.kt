@@ -1,4 +1,4 @@
-package com.example.animalcrossing.ui.insect
+package com.example.animalcrossing.ui.detail
 
 import android.graphics.Color
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +15,9 @@ class ActiveHoursAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return LayoutInflater.from(parent.context)
             .inflate(R.layout.calendar_item, parent, false).run {
-                ViewHolder(this)
+                ViewHolder(
+                    this
+                )
             }
     }
 

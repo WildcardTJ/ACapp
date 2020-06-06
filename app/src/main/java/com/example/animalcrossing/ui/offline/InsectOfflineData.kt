@@ -1,4 +1,4 @@
-package com.example.animalcrossing.ui.insect
+package com.example.animalcrossing.ui.offline
 
 import com.example.animalcrossing.ui.insect.model.InsectModel
 

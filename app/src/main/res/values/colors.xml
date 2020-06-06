@@ -8,5 +8,8 @@
     <color name="insectText">#FFFFFF</color>
     <color name="insectButton">#B4B4B4</color>
     <color name="activeMonth">#669549</color>
+    <color name="activeMonthAlternate">#5D8C40</color>
+    <color name="currentMonthAlternate">#5D8C40</color>
     <color name="inactiveMonth">#FFFFFF</color>
+    <color name="inactiveMonthAlternate">#F6F6F6</color>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.animalcrossing.ui.insect
+package com.example.animalcrossing.ui.detail
 
 import androidx.lifecycle.ViewModel
 import com.example.animalcrossing.ui.insect.model.AccountModel
@@ -7,7 +7,7 @@ import com.example.animalcrossing.ui.insect.model.InsectModel
 import com.example.animalcrossing.utils.DataUtils
 
 
-class InsectDetailViewModel : ViewModel() {
+class DetailViewModel : ViewModel() {
 
     var accountModel: AccountModel = AccountModel(Hemisphere.NORTHERN)
     var insect: InsectModel? = null

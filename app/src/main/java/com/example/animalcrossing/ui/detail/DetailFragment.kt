@@ -1,4 +1,4 @@
-package com.example.animalcrossing.ui.insect
+package com.example.animalcrossing.ui.detail
 
 import android.content.Context
 import android.os.Bundle
@@ -18,7 +18,7 @@ class InsectDetailFragment : Fragment() {
 
     private lateinit var adapter: CalendarAdapter
 
-    private val viewModel: InsectDetailViewModel by viewModel()
+    private val viewModel: DetailViewModel by viewModel()
 
     private lateinit var insect: InsectModel
     private lateinit var accountModel: AccountModel
@@ -87,9 +87,16 @@ class InsectDetailFragment : Fragment() {
     private fun setupCalendarView(calendar: List<String>) {
         //transition when north/south switch occurs
         val calendarMap = viewModel.convertMonthListToMap(calendar)
-        adapter = CalendarAdapter(calendarMap, accountModel.hemisphere)
+        adapter = CalendarAdapter(
+            calendarMap,
+            accountModel.hemisphere
+        )
         calendar_grid.adapter = adapter
-        calendar_grid.layoutManager = NonScrollableGridLayoutManager(context, NUMBER_OF_COLUMNS)
+        calendar_grid.layoutManager =
+            NonScrollableGridLayoutManager(
+                context,
+                NUMBER_OF_COLUMNS
+            )
         //TODO refactor calendar view to use TableLayout instead of RecyclerView
     }
 
