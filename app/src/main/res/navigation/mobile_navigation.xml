@@ -15,7 +15,7 @@
         android:id="@+id/nav_insect"
         android:name="com.example.animalcrossing.ui.insect.InsectListFragment"
         android:label="@string/menu_insect"
-        tools:layout="@layout/fragment_insect" >
+        tools:layout="@layout/fragment_insect_list" >
         <action
             android:id="@+id/action_nav_insect_to_insect_detail"
             app:destination="@id/insect_detail" />
@@ -25,7 +25,7 @@
         android:id="@+id/insect_detail"
         android:name="com.example.animalcrossing.ui.detail.InsectDetailFragment"
         android:label="{title}"
-        tools:layout="@layout/fragment_insect_detail" >
+        tools:layout="@layout/fragment_detail" >
         <argument
             android:name="title"
             app:argType="string"/>

@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.AccountModel
 import com.example.animalcrossing.ui.insect.model.InsectModel
-import kotlinx.android.synthetic.main.fragment_insect_detail.*
+import kotlinx.android.synthetic.main.fragment_detail.*
+import kotlinx.android.synthetic.main.fragment_detail.donated_image
+import kotlinx.android.synthetic.main.insect_list_item.*
 
 
 class InsectDetailFragment : Fragment() {
@@ -27,7 +30,7 @@ class InsectDetailFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_insect_detail, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_detail, container, false)
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,12 +43,22 @@ class InsectDetailFragment : Fragment() {
 
         //TODO have detail image drawn as percentage of screen
 
+        showImage(insect.src)
         showPrice(insect.value)
         showDonationStatus(insect.donated)
         setupCalendarView(insect.calendar)
         setupActiveHoursView(insect.activeHours)
         donated_card.setOnClickListener { updateDonation() }
         northern_southern.setOnClickListener { updateHemisphere() }
+    }
+
+    private fun showImage(src: String) {
+
+        val imageId = requireContext().resources.getIdentifier(src, "drawable", requireContext().packageName)
+        if (imageId != 0)
+            detail_image.setImageResource(imageId)
+        else
+            detail_image.setImageResource(R.drawable.ic_insect_foreground)
     }
 
     private fun updateDonation() {

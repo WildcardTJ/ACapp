@@ -22,7 +22,7 @@ class InsectListFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_insect, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_insect_list, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -30,7 +30,14 @@ class InsectListFragment : Fragment() {
         val insectData = listViewModel.insectData
         setupRecyclerView(insectData)
         showInsects(insectData)
+        updateInsectImage(insectData)
         //TODO show number of donated
+    }
+
+    private fun updateInsectImage(insectData: List<InsectModel>) {
+        insectData.forEach {
+            it.src
+        }
     }
 
     private fun setupRecyclerView(insectData: List<InsectModel>) {

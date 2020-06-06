@@ -1,5 +1,9 @@
 package com.example.animalcrossing.utils
 
+import android.view.View
+import android.widget.ImageButton
+import com.example.animalcrossing.R
+
 class DataUtils {
 
     fun convertMonthListToMap(activeMonthsList: List<String>): HashMap<String, Boolean> {

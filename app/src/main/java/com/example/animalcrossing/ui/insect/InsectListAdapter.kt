@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.InsectModel
+import com.example.animalcrossing.utils.DataUtils
 import kotlinx.android.synthetic.main.insect_list_item.view.*
 
 
@@ -29,6 +30,7 @@ class InsectListAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = insectList[position].run {
         setClickListeners(holder, this)
         holder.updateInsectName(this.name)
+        holder.updateImage(this.src)
         holder.updateDonatedState(this.donated)
     }
 
@@ -44,13 +46,26 @@ class InsectListAdapter(
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+        internal fun updateImage(src: String) {
+
+            val imageButtonId = itemView.findViewById<ImageButton>(R.id.insect_image)
+            val imageId = itemView.resources.getIdentifier(src, "drawable", itemView.context.packageName)
+            if (imageId != 0)
+                imageButtonId.setImageResource(imageId)
+            else
+                imageButtonId.setImageResource(R.drawable.ic_insect_foreground)
+        }
+
         internal fun updateInsectName(name: String) {
             itemView.insect_text.text = name
         }
 
         internal fun updateDonatedState(donated: Boolean) {
-            if (donated) { itemView.donated_image.visibility = View.VISIBLE }
-            else { itemView.donated_image.visibility = View.GONE }
+            if (donated) {
+                itemView.donated_image.visibility = View.VISIBLE
+            } else {
+                itemView.donated_image.visibility = View.GONE
+            }
         }
 
         internal fun openInsectPage(insectModel: InsectModel) {
