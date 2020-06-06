@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.AccountModel
@@ -38,7 +37,7 @@ class InsectDetailFragment : Fragment() {
         viewModel.insect = this.requireArguments().get("InsectModel") as InsectModel
         insect = viewModel.insect!!
         accountModel = viewModel.accountModel
-        
+
         //TODO have detail image drawn as percentage of screen
 
         showPrice(insect.value)
@@ -87,7 +86,7 @@ class InsectDetailFragment : Fragment() {
 
     private fun setupSeasonalityView(seasonality: List<String>) {
         //transition when north/south switch occurs
-        val seasonalityMap = viewModel.convertListToMap(seasonality)
+        val seasonalityMap = viewModel.convertMonthListToMap(seasonality)
         adapter = SeasonalityAdapter(seasonalityMap, accountModel.hemisphere)
         calendar_grid.adapter = adapter
         calendar_grid.layoutManager = CustomGridLayoutManager(context, NUMBER_OF_COLUMNS)

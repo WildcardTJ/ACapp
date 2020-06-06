@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.animalcrossing.ui.insect.model.AccountModel
 import com.example.animalcrossing.ui.insect.model.Hemisphere
 import com.example.animalcrossing.ui.insect.model.InsectModel
+import com.example.animalcrossing.utils.DataUtils
 
 
 class InsectDetailViewModel : ViewModel() {
@@ -19,36 +20,6 @@ class InsectDetailViewModel : ViewModel() {
             accountModel.hemisphere = Hemisphere.NORTHERN
     }
 
-    fun convertListToMap(activeMonthsList: List<String>): HashMap<String, Boolean> {
+    fun convertMonthListToMap(activeMonthsList: List<String>): HashMap<String, Boolean> = DataUtils().convertMonthListToMap(activeMonthsList)
 
-        val allMonths = listOf(
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sept",
-            "Oct",
-            "Nov",
-            "Dec"
-        )
-
-        //TODO refactor because it is stupid
-
-        //create a map, set all values to false
-        val activeMonthsMap = mutableMapOf<String, Boolean>()
-        allMonths.forEach { month -> activeMonthsMap[month] = false }
-
-        //matches only active months, sets those to true
-        activeMonthsList.forEach { month ->
-            if (activeMonthsMap[month] == false) {
-                activeMonthsMap[month] = true
-            }
-        }
-
-        return activeMonthsMap as HashMap
-    }
 }
