@@ -38,6 +38,8 @@ class InsectDetailFragment : Fragment() {
         viewModel.insect = this.requireArguments().get("InsectModel") as InsectModel
         insect = viewModel.insect!!
         accountModel = viewModel.accountModel
+        
+        //TODO have detail image drawn as percentage of screen
 
         showPrice(insect.value)
         showDonationStatus(insect.donated)
@@ -85,11 +87,11 @@ class InsectDetailFragment : Fragment() {
 
     private fun setupSeasonalityView(seasonality: List<String>) {
         //transition when north/south switch occurs
-
         val seasonalityMap = viewModel.convertListToMap(seasonality)
         adapter = SeasonalityAdapter(seasonalityMap, accountModel.hemisphere)
         calendar_grid.adapter = adapter
         calendar_grid.layoutManager = CustomGridLayoutManager(context, NUMBER_OF_COLUMNS)
+        //TODO refactor calendar view to use TableLayout instead of RecyclerView
     }
 
     private fun setupActiveHoursView(activeHours: String) {
