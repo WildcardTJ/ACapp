@@ -148,7 +148,8 @@
         android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/value_card">
+        app:layout_constraintTop_toBottomOf="@id/value_card"
+        tools:visibility="gone">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -196,27 +197,41 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calendar_card">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:padding="5dp"
-            android:text="@string/active_hours"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/hours_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
-            android:foregroundGravity="center_horizontal"
-            android:visibility="visible"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            tools:listitem="@layout/hours_recycler_item"
-            tools:visibility="visible" />
+            <FrameLayout
+                android:id="@+id/clock_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EFE7BA"
+                android:padding="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" >
+
+            <ImageView
+                android:id="@+id/clock_image"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_twenty_four_hour_clock"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hours_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:scrollbars="horizontal"
+                android:visibility="invisible"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/hours_recycler_item"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
