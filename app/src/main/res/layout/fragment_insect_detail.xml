@@ -6,21 +6,34 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical">
 
-    <ImageView
-        android:id="@+id/detail_image"
+    <FrameLayout
+        android:id="@+id/detail_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/common_butterfly"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#EFE7BA"
+        android:padding="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_common_butterfly"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </FrameLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/value_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:cardCornerRadius="4dp"
         app:layout_constraintEnd_toStartOf="@id/donated_card"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detail_image">
+        app:layout_constraintTop_toBottomOf="@id/detail_frame">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -60,10 +73,11 @@
         android:id="@+id/donated_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:cardCornerRadius="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/value_card"
-        app:layout_constraintTop_toBottomOf="@id/detail_image">
+        app:layout_constraintTop_toBottomOf="@id/detail_frame">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

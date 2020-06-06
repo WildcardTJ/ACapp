@@ -30,6 +30,7 @@ class InsectListFragment : Fragment() {
         val insectData = viewModel.insectData
         setupRecyclerView(insectData)
         showInsects(insectData)
+        //TODO show number of donated
     }
 
     private fun setupRecyclerView(insectData: List<InsectModel>) {

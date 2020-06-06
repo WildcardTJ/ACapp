@@ -1,11 +1,13 @@
 package com.example.animalcrossing.ui.insect
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.AccountModel
@@ -83,10 +85,11 @@ class InsectDetailFragment : Fragment() {
 
     private fun setupSeasonalityView(seasonality: List<String>) {
         //transition when north/south switch occurs
+
         val seasonalityMap = viewModel.convertListToMap(seasonality)
         adapter = SeasonalityAdapter(seasonalityMap, accountModel.hemisphere)
         calendar_grid.adapter = adapter
-        calendar_grid.layoutManager = GridLayoutManager(context, NUMBER_OF_COLUMNS)
+        calendar_grid.layoutManager = CustomGridLayoutManager(context, NUMBER_OF_COLUMNS)
     }
 
     private fun setupActiveHoursView(activeHours: String) {
@@ -96,6 +99,12 @@ class InsectDetailFragment : Fragment() {
     companion object {
 
         private const val NUMBER_OF_COLUMNS = 6
+    }
+
+    internal class CustomGridLayoutManager(context: Context?, columns: Int) : GridLayoutManager(context, columns) {
+        override fun canScrollVertically(): Boolean {
+            return false
+        }
     }
 
 }
