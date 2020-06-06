@@ -12,6 +12,7 @@ An Android companion app for Animal Crossing New Horizons!
 * Upload game save data to the app (not even sure if that one's possible)
 
 ## Tech
+* Jetpack
 * Room
 * Koin
 * NavController
