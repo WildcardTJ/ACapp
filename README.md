@@ -5,7 +5,7 @@ An Android companion app for Animal Crossing New Horizons!
 ## Planned Features
 * Browse a list of insects and fish 
 * Log your donations
-* Daily checklist
+* Daily activity checklist
 * Get notifications on who's in town today
 * Log turnip prices and get price predictions
 * Check out the latest posts from /r/animalcrossing
