@@ -9,10 +9,10 @@ import com.example.animalcrossing.R
 import com.example.animalcrossing.ui.insect.model.Hemisphere
 import kotlinx.android.synthetic.main.calendar_item.view.*
 
-class SeasonalityAdapter(
-    private val seasonality: Map<String, Boolean>,
+class CalendarAdapter(
+    private val calendar: Map<String, Boolean>,
     private val hemisphere: Hemisphere
-) : RecyclerView.Adapter<SeasonalityAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<CalendarAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return LayoutInflater.from(parent.context)
@@ -21,13 +21,13 @@ class SeasonalityAdapter(
             }
     }
 
-    override fun getItemCount(): Int = seasonality.size
+    override fun getItemCount(): Int = calendar.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        seasonality.values.toList()[position].run {
+        calendar.values.toList()[position].run {
             val enabled: Boolean = if (hemisphere == Hemisphere.SOUTHERN) !this else this
             holder.updateBoxColour(enabled)
-            holder.updateText(seasonality.keys.toList()[position])
+            holder.updateText(calendar.keys.toList()[position])
             holder.updateTextColor(enabled)
             //TODO highlight current month
         }

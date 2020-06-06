@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_insect_detail.*
 
 class InsectDetailFragment : Fragment() {
 
-    private lateinit var adapter: SeasonalityAdapter
+    private lateinit var adapter: CalendarAdapter
 
     private val viewModel: InsectDetailViewModel by viewModel()
 
@@ -42,7 +42,7 @@ class InsectDetailFragment : Fragment() {
 
         showPrice(insect.value)
         showDonationStatus(insect.donated)
-        setupSeasonalityView(insect.seasonality)
+        setupCalendarView(insect.calendar)
         setupActiveHoursView(insect.activeHours)
         donated_card.setOnClickListener { updateDonation() }
         northern_southern.setOnClickListener { updateHemisphere() }
@@ -84,12 +84,12 @@ class InsectDetailFragment : Fragment() {
         }
     }
 
-    private fun setupSeasonalityView(seasonality: List<String>) {
+    private fun setupCalendarView(calendar: List<String>) {
         //transition when north/south switch occurs
-        val seasonalityMap = viewModel.convertMonthListToMap(seasonality)
-        adapter = SeasonalityAdapter(seasonalityMap, accountModel.hemisphere)
+        val calendarMap = viewModel.convertMonthListToMap(calendar)
+        adapter = CalendarAdapter(calendarMap, accountModel.hemisphere)
         calendar_grid.adapter = adapter
-        calendar_grid.layoutManager = CustomGridLayoutManager(context, NUMBER_OF_COLUMNS)
+        calendar_grid.layoutManager = NonScrollableGridLayoutManager(context, NUMBER_OF_COLUMNS)
         //TODO refactor calendar view to use TableLayout instead of RecyclerView
     }
 
@@ -102,7 +102,7 @@ class InsectDetailFragment : Fragment() {
         private const val NUMBER_OF_COLUMNS = 6
     }
 
-    internal class CustomGridLayoutManager(context: Context?, columns: Int) : GridLayoutManager(context, columns) {
+    internal class NonScrollableGridLayoutManager(context: Context?, columns: Int) : GridLayoutManager(context, columns) {
         override fun canScrollVertically(): Boolean {
             return false
         }

@@ -28,7 +28,7 @@
     <string name="not_donated">Not Donated</string>
     <string name="donated">Donated</string>
     <string name="price_data_unavailable">\?\?\?</string>
-    <string name="seasonality">Seasonality</string>
+    <string name="calendar">Calendar</string>
     <string name="active_hours">Active hours</string>
     <string name="northern">Northern</string>
     <string name="southern">Southern</string>
