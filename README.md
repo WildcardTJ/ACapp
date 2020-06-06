@@ -18,5 +18,5 @@ An Android companion app for Animal Crossing New Horizons!
 * Room
 * Koin
 * NavController
-* One Activity, Lots of fragments
+* One Activity, many fragments
 * MVVM
