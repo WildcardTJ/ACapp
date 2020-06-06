@@ -4,6 +4,7 @@ An Android companion app for Animal Crossing New Horizons!
 
 ## Planned Features
 * Integration with http://acnhapi.com/
+* Support Offline mode
 * Browse a list of insects and fish 
 * Log your donations
 * Daily activity checklist
