@@ -4,7 +4,7 @@ An Android companion app for Animal Crossing New Horizons!
 
 ## Planned Features
 * Get data from http://acnhapi.com/
-* Browse a list of insects and fish
+* Browse a list of insects, fish, furniture, fossils and artwork
 * Log your donations
 * Daily activity checklist
 * Get notifications on who's in town today
