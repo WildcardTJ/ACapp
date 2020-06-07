@@ -171,7 +171,7 @@
                 app:layout_constraintEnd_toEndOf="@id/clock_image"
                 app:layout_constraintStart_toStartOf="@id/clock_image"
                 app:layout_constraintTop_toTopOf="@id/clock_image"
-                tools:listitem="@layout/hours_recycler_item"
+                tools:listitem="@layout/active_hour"
                 tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

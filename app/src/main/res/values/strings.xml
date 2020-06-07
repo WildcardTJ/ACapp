@@ -12,11 +12,8 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
     <string name="insect_detail">Insect Detail</string>
-
-    <!--Insects-->
-    <string name="insect_test_long_name">Citrus Long Horned Beetle</string>
-
 
     <string name="communicate">Communicate</string>
     <string name="image_of_an_insect">Image of an insect</string>
@@ -32,4 +29,13 @@
     <string name="active_hours">Active hours</string>
     <string name="northern">Northern</string>
     <string name="southern">Southern</string>
+
+    <!-- Clock -->
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+    <string name="_12">12</string>
+    <string name="_3">4</string>
+    <string name="_6">12</string>
+    <string name="_9">12</string>
+
 </resources>
