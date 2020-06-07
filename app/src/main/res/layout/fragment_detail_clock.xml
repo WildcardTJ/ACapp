@@ -141,25 +141,40 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/clock_card"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="25dp"
         app:cardCornerRadius="4dp"
-        app:layout_constraintEnd_toEndOf="@id/value_card"
         app:layout_constraintStart_toStartOf="@id/value_card"
-        app:layout_constraintTop_toBottomOf="@id/value_card">
+        app:layout_constraintTop_toBottomOf="@id/value_card"
+        app:layout_constraintEnd_toEndOf="@id/value_card">
 
-        <ImageView
-            android:id="@+id/clock_image"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:padding="5dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_timeline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/clock_image"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/ic_twenty_four_hour_clock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/clock_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/clock_image"
+                app:layout_constraintStart_toStartOf="@id/clock_image"
+                app:layout_constraintTop_toTopOf="@id/clock_image"
+                tools:listitem="@layout/hours_recycler_item"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
