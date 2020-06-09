@@ -180,7 +180,6 @@
                 android:layout_height="25dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginBottom="8dp"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintBottom_toBottomOf="@id/clock_image"
                 app:layout_constraintStart_toStartOf="@id/clock_image"
                 tools:listitem="@layout/active_hour" />

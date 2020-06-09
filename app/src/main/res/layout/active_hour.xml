@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/month_layout"
-    android:layout_width="5dp"
+    android:layout_width="10dp"
     android:layout_height="5dp"
-    android:background="@color/colorAccent">
+    android:background="#ADD81B60">
 
 </FrameLayout>
