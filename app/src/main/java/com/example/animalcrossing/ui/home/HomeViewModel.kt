@@ -25,5 +25,4 @@ class HomeViewModel (private val service: AnimalCrossingService) : ViewModel() {
             println(model.awaitResponse().body())
         }
     }
-
 }
