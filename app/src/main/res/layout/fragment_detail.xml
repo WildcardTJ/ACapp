@@ -175,7 +175,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/clock_hours"
+                android:id="@+id/clock"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:layout_marginStart="4dp"
@@ -183,7 +183,7 @@
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintBottom_toBottomOf="@id/clock_image"
                 app:layout_constraintStart_toStartOf="@id/clock_image"
-                tools:listitem="@layout/active_hour" />
+                tools:listitem="@layout/active_hour_item" />
 
             <ImageView
                 android:id="@+id/clock_image"

@@ -1,12 +1,10 @@
 package com.example.animalcrossing.ui.detail
 
-import android.graphics.Color
 import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import com.example.animalcrossing.R
-import kotlinx.android.synthetic.main.calendar_item.view.*
 
 class ActiveHoursAdapter(
     private val activeHours: String
@@ -14,7 +12,7 @@ class ActiveHoursAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return LayoutInflater.from(parent.context)
-            .inflate(R.layout.calendar_item, parent, false).run {
+            .inflate(R.layout.active_hour_item, parent, false).run {
                 ViewHolder(
                     this
                 )
@@ -33,20 +31,7 @@ class ActiveHoursAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         internal fun updateBoxColour(enabled: Boolean) {
-            if (enabled) {
-                itemView.month_layout.setBackgroundColor(itemView.resources.getColor(R.color.activeMonth))
-                //TODO selectable themes
-            }
-        }
 
-        internal fun updateText(name: String) {
-            itemView.month_text.text = name
-        }
-
-        internal fun updateTextColor(enabled: Boolean) {
-            if (enabled) {
-                itemView.month_text.setTextColor(Color.WHITE)
-            }
         }
     }
 }

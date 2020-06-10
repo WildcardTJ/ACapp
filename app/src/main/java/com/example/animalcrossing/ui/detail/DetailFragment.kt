@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -19,7 +17,8 @@ import kotlinx.android.synthetic.main.fragment_detail.donated_image
 
 class InsectDetailFragment : Fragment() {
 
-    private lateinit var adapter: CalendarAdapter
+    private lateinit var calendarAdapter: CalendarAdapter
+    private lateinit var activeHoursAdapter: ActiveHoursAdapter
 
     private val viewModel: DetailViewModel by viewModel()
 
@@ -71,7 +70,7 @@ class InsectDetailFragment : Fragment() {
 
         viewModel.updateAccountModelHemisphere()
 
-        adapter.notifyDataSetChanged()
+        calendarAdapter.notifyDataSetChanged()
     }
 
     private fun showPrice(value: Int) {
@@ -100,11 +99,11 @@ class InsectDetailFragment : Fragment() {
     private fun setupCalendarView(calendar: List<String>) {
         //transition when north/south switch occurs
         val calendarMap = viewModel.convertMonthListToMap(calendar)
-        adapter = CalendarAdapter(
+        calendarAdapter = CalendarAdapter(
             calendarMap,
             accountModel.hemisphere
         )
-        calendar_grid.adapter = adapter
+        calendar_grid.adapter = calendarAdapter
         calendar_grid.layoutManager =
             NonScrollableGridLayoutManager(
                 context,
