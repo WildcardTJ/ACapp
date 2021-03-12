@@ -12,7 +12,7 @@ An Android companion app for Animal Crossing New Horizons!
 * Support Offline mode
 * Import/Export app data to CSV / GDrive 
 * Upload game save data to the app (not even sure if that one's possible, there are programs that let you edit your game saves so if I use one of those to just read the save, I can populate the app with tracking info)
-*Have a pipeline run automated tests before merging
+* Have a CI pipeline to run automated tests
 
 ## Tech
 * Jetpack
